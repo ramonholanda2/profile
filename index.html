@@ -10,16 +10,16 @@
 </head>
 <body>
     <div class="portifolio">
-        <section>
-            <img width="100%" height="756px" src="./pages/imgs/section1.jpg" alt="">
+        <section class="ramon">
+            <img width="100%" height="850px" src="./pages/imgs/section1.jpg" alt="">
             <header class="header-block">
                 <div class="logo">
                     <img src="./pages/imgs/logo.svg" alt="logo">
                 </div>
                 <ul>
-                    <li>QUEM SOU?</li>
-                    <li>SKILLS</li>
-                    <li>PROJETOS</li> 
+                    <a href="#"><li>QUEM SOU?</li></a>
+                    <a href="#"><li>SKILLS</li></a>
+                    <a href="#"><li>PROJETOS</li></a> 
                 </ul>
                 <div class="github">
                     <a href="https://github.com/ramonsilva2"><img src="./pages/imgs/github.png" alt="github"></a>
@@ -54,7 +54,7 @@
                 <h2>Essas são minhas habilidades e um pouco do que eu utilizo durante o desenvolvimento de um site.</h2>
             </div>
             <div class="my-skills">
-                <div class="front">
+                <div class="front" id="front">
                     <img src="/pages/imgs/front.svg" alt="front-logo">
                     <h3>FRONT-END</h3>
                     <h4>Essas são algumas tecnologias que tenho conhecimento no desenvolvimento Front-end.</h4>
@@ -65,7 +65,7 @@
                         <button>JAVASCRIPT</button>
                     </div>
                 </div>
-                <div class="extras">
+                <div class="extras" id="extras">
                     <img src="./pages/imgs/extras.svg" alt="">
                     <h3>OUTROS</h3>
                     <h4>Algumas das ferramentas que ultilizo durante o desenvolvimento e prototipação de um projeto.</h4>
@@ -78,7 +78,21 @@
                 </div>
             </div>
         </section>
+        <section id='project-details'></section>
         <section class="contact">
+            <section class="projects" >
+                <h1>Alguns projetos</h1>
+                <div class="grid-projects">
+                    <div>
+                        <img src="./pages/imgs/project1/covid1.png" alt="">
+                    </div>
+                    <div>oi</div>
+                    <div>oi</div>
+                    <div>oi</div>
+                    <div>oi</div>
+                    <div>oi</div>
+                </div>
+            </section>
             <div class="contact-section">
                 <div class="contact-me">
                     <h2>ACHOU LEGAL?</h2>
@@ -128,5 +142,8 @@
         </footer>
 
     </div>
+
+    <script src="./pages/styles/index.js"></script>
+    <script src="./scripts/projects.js"></script>
 </body>
 </html>
