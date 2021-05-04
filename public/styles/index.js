@@ -1,9 +1,10 @@
 const header = document.querySelector(".header-block");
 const linkScroll = document.querySelectorAll('.header-block a[href^="#"] li');
 const skills = document.querySelector('.btn1');
+const btnSkill = document.getElementById('btn-skill');
 const front = document.getElementById('front');
 const extras = document.getElementById('extras');
-
+const btnProject = document.getElementById('btn-project'); 
 
 function positionHeader() {
     if(window.scrollY > 100) {
@@ -16,28 +17,21 @@ function positionHeader() {
     }
 }
 
-
-function scrollBtn(){
-    setTimeout(() => {
-        window.scroll(0, 650);
-    }, 10);
+function scrollBtn(e){
+    e.preventDefault();
+    window.scroll(0, 650);
 }
-
-linkScroll[0].addEventListener('click', scrollBtn);
-
 
 function scrollBtnSkills(e){
-    setTimeout(() => {
-        window.scroll(0, 1250);
-    }, 10);
+    e.preventDefault();
+    window.scroll(0, 1250);
 }
 
-linkScroll[1].addEventListener('click', scrollBtnSkills);
-
-skills.addEventListener('click', e => {
-    e.preventDefault();
-    scroll2();
-})
+function scrollBtnProjects(e) {
+    e.preventDefault(e);
+    console.log('oi')
+    window.scroll(0, 1900);
+}
 
 function animationSkills() {
     if(window.scrollY > 1000 && window.innerWidth > 1135) {
@@ -65,8 +59,27 @@ function animationSkills() {
           });
           
         window.removeEventListener('scroll', animationSkills);
+        } else {
+            front.style.display = 'none';
+            extras.style.display = 'none';
         }
 }
+
+
+linkScroll[0].addEventListener('click', (e) => scrollBtn(e));
+
+linkScroll[1].addEventListener('click', (e) => scrollBtnSkills(e));
+
+btnSkill.onclick = (e) => scrollBtnSkills(e);
+btnProject.onclick = (e) => scrollBtnProjects(e);
+
+skills.addEventListener('click', e => {
+    e.preventDefault();
+})
+
+linkScroll[2].addEventListener('click', (e) => scrollBtnProjects(e))
+
+
 
 window.addEventListener('scroll', positionHeader);
 window.addEventListener('scroll', animationSkills);

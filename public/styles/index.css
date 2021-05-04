@@ -38,6 +38,10 @@ header {
 .header-block ul a {
     text-decoration: none;
     color: white;
+    transition-duration: 0.2s;
+}
+.header-block ul a:hover {
+    filter: brightness(70%);
 }
 .header-block ul li {
     margin: 0 1rem;
@@ -230,13 +234,16 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 3rem 0;
 }
 .projects h1 {
-    font-size: 2.2rem;
+    text-align: center;
+    font-size: 3rem;
+    margin: 1.4rem 0;
 }
 .grid-projects {
     display: grid;
-    grid-template-columns: 15.1rem 15.1rem 15.1rem;
+    grid-template-columns: 18.1rem 18.1rem 18.1rem;
 }
 .grid-projects div {
     display: flex;
@@ -245,15 +252,27 @@ header {
 
     margin: 5% 10%;
     border-radius: 10px;
+    height: 9rem;
 
     cursor: pointer;
 
-    border: 3px solid #14c514;
+    border: 4px solid #14c514;
 }
 .grid-projects div img {
-    width: 350px;
-    height: 100px;
-    border-radius: 10px;
+    width:  100%;
+    height: 100%;
+    border-radius: 7px;
+
+    transition-duration: .2s;
+}
+.grid-projects div img:hover {
+    padding: 5px;
+}
+.project{
+    animation: openProject 0.4s none 0s linear;
+}
+.closeProject {
+    animation: closeProject 0.4s none 0s linear;
 }
 .project-details {
     position: fixed;
@@ -275,14 +294,20 @@ header {
     right: 3.5rem;
 
     width: 30px;
+    height: 30px;
     cursor: pointer;
     background: transparent;
+    border: none;
     border: 1px solid red;
+    border-radius: 50%;
 
 }
 .project-details button i {
-    margin-top: 1.5px;
+    margin-top: 2px;
     color: red;
+}
+.project-details button i:hover {
+    filter: brightness(90%);
 }
 .project {
     display: flex;
@@ -303,21 +328,24 @@ header {
     margin-right: 5%;
 }
 .images img {
-    border-radius: 8px;
     width: 25rem;
     height: 25rem;
+    border-radius: 8px;
 }
 .detail {
     display: flex;
     flex-direction: column;
-    align-items:baseline;
-    justify-content:space-around;
+    align-items: center;
+    justify-content: space-around;
     max-width: 25rem;
     color: whitesmoke;
 }
 .detail a {
     text-decoration: none;
     color: #14c514;
+}
+.detail a:hover {
+    text-decoration:underline;
 }
 .project h1 {
     color: #e7e7e7;
@@ -390,6 +418,10 @@ header {
 }
 .my-contact ul li {
     margin: 0 0.5rem;
+    transition: ease all 0.2s;
+}
+.my-contact ul li:hover {
+    filter: brightness(80%);
 }
 .credits {
     display: flex;
@@ -439,6 +471,12 @@ header {
     }
 }
 
+@media(max-width: 882px) {
+    .grid-projects {
+        grid-template-columns: 15.1rem 15.1rem 15.1rem;
+    }
+}
+
 @media (max-width: 700px) {
     .front,
     .extras {
@@ -454,6 +492,28 @@ header {
     }
     .tech {
         flex-direction: column;
+    }
+    .details {
+        flex-direction: column;
+    }
+    .detail h3 {
+        max-width: 17rem;
+        font-size: 1rem;
+    }
+    .project { 
+        background-color: transparent;
+    }
+    .project h1 {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+     
+    .images img {
+        margin: 0;
+        width: 18rem;
+        height: 13rem;
+
+        margin: 0.8rem 0;
     }
     .contact-section {
         display: flex;
@@ -543,8 +603,44 @@ header {
     .buttons a button {
         width: 280px;
     }
+    .projects {
+        margin: 0;
+    }
+    .projects h1 {
+        font-size: 2rem;
+        margin: 0;
+    }
 }
 
 
+@keyframes openProject {
+    0%{
+        transform: rotate(0) translateX(-1200px) translateY(0) skewX(35deg);
+        }
+    47%{
+        transform: rotate(0) translateX(-800px) skewX(15);
+        }
+    74%{
+        transform: rotate(0) translateX(-400px) skewX(5);
+        }
+    99%{
+        transform: rotate(0) translateX(0px) skewX(0);
+        }
+}
 
+
+@keyframes closeProject {
+    0%{
+        transform: rotate(0) translateX(0px) skewY(0);
+    }
+    47%{
+        transform: rotate(0) translateX(-400px) skewY(5);
+    }
+    74%{
+        transform: rotate(0) translateX(-800px) skewY(15);
+    }
+    99%{
+        transform: rotate(0) translateX(-1200px) translateY(0) skew(-0.07turn);
+        }
+}
 
