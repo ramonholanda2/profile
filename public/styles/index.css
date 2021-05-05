@@ -339,6 +339,7 @@ header {
     justify-content: space-around;
     max-width: 25rem;
     color: whitesmoke;
+    line-height: 25px;
 }
 .detail a {
     text-decoration: none;

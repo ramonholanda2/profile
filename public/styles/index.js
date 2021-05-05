@@ -59,10 +59,7 @@ function animationSkills() {
           });
           
         window.removeEventListener('scroll', animationSkills);
-        } else {
-            front.style.display = 'none';
-            extras.style.display = 'none';
-        }
+        } 
 }
 
 
